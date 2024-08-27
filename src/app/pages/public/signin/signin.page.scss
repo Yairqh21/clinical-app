@@ -1,0 +1,35 @@
+ion-item {
+  --border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.logo-container {
+  text-align: center;
+
+  h1 {
+    font-size: 32px;
+    font-weight: 800;
+  }
+
+  p {
+    margin-bottom: 42px;
+  }
+}
+
+
+/* Estilos a los botones */
+
+.custom-button {
+
+  height: 50px;
+  --border-radius: 15px;
+  --background: #07B5CA;
+  font-weight: bold;
+  color: white;
+  font-family: 'Poppins';
+  text-transform: none;
+}
+
+ion-button {
+  text-transform: none;
+}

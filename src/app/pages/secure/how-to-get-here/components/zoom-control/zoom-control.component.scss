@@ -1,0 +1,55 @@
+.zoom-control {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+ion-button {
+  --background: #ffffff;
+  --background-activated: #06B7C6;
+  --color: #06B7C6;
+  --border-radius: 15px;
+  --border-style: solid;
+  --border-width: 1px;
+  --box-shadow: 0 4px 8px #a3a3a3;
+  height: 50px;
+}
+
+.zoom-in-out {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+ion-list {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px #a3a3a3;
+  border: solid 1px #06b7c6;
+}
+
+ion-item.zoom-in,
+ion-item.zoom-out {
+  --background: transparent;
+}
+
+ion-item.zoom-in {
+  border-bottom: 1px solid #ddd;
+}
+
+ion-item.zoom-out {
+  border-top: 1px solid #ddd;
+}
+
+ion-icon {
+  color: #06B7C6;
+  font-size: 24px;
+}

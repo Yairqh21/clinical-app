@@ -1,0 +1,124 @@
+<ion-header collapse="fade" [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button color="secondary" text="volver" defaultHref="/profile">
+      </ion-back-button>
+    </ion-buttons>
+
+    <ion-title color="light" class="ion-text-center">
+      Editar mi perfil
+    </ion-title>
+
+    <ion-buttons slot="end">
+      <form [formGroup]="edit_profile_form" (ngSubmit)="submit()">
+        <ion-button color="secondary" type="submit">
+          Hecho
+        </ion-button>
+      </form>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ng-container *ngIf="!content_loaded">
+
+    <ion-card class="ion-padding profile-card">
+      <ion-card-content>
+        <!-- Skeleton Loader for Avatar -->
+        <div class="skeleton skeleton-avatar skeleton-loader">
+          <ion-thumbnail class="skeleton-avatar">
+            <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+          </ion-thumbnail>
+        </div>
+
+        <!-- Skeleton Loader for Username -->
+        <div class="skeleton skeleton-text skeleton-loader" style="height: 20px; width: 60%;">
+          <ion-skeleton-text [animated]="true" style="height: 20px; margin-bottom: 10px;"></ion-skeleton-text>
+        </div>
+
+        <!-- Skeleton Loader for User Email -->
+        <div class="skeleton skeleton-text skeleton-loader" style="height: 20px; width: 80%;">
+          <ion-skeleton-text [animated]="true" style="height: 20px; margin-bottom: 10px;"></ion-skeleton-text>
+        </div>
+
+        <!-- Skeleton Loader for Button -->
+        <ion-button  class="skeleton skeleton-button skeleton-loader">
+          <ion-skeleton-text [animated]="true" style="height: 24px; "></ion-skeleton-text>
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Skeleton Loader for Form -->
+    <div class="ion-padding form">
+      <div class="form-default">
+        <!-- Skeleton Loader for Form Items -->
+        <div class="skeleton" style="height: 56px; margin-bottom: 10px;">
+          <ion-skeleton-text [animated]="true" style="height: 56px; "></ion-skeleton-text>
+        </div>
+        <div class="skeleton" style="height: 56px; margin-bottom: 10px;">
+          <ion-skeleton-text [animated]="true" style="height: 56px; "></ion-skeleton-text>
+        </div>
+        <div class="skeleton" style="height: 56px; margin-bottom: 10px;">
+          <ion-skeleton-text [animated]="true" style="height: 56px; "></ion-skeleton-text>
+        </div>
+      </div>
+
+    </div>
+
+  </ng-container>
+
+  <ng-container *ngIf="content_loaded">
+
+    <ion-card class="ion-padding profile-card">
+      <ion-card-content>
+        <ion-avatar>
+          <img [src]="selectedImage ? selectedImage : '../../../../assets/img/profile.png'" alt="Profile Picture">
+        </ion-avatar>
+
+        <h1>
+          <ion-text color="light"><strong>{{username}}</strong></ion-text>
+        </h1>
+
+        <p>
+          <ion-text color="medium">{{userEmail}}</ion-text>
+        </p>
+
+        <ion-button class="ion-button-small" color="primary" (click)="takeimage()" style="--border-radius: 15px;">
+          Actualizar foto de perfil
+        </ion-button>
+
+      </ion-card-content>
+    </ion-card>
+
+    <div class="ion-padding form">
+      <form class="form-default" [formGroup]="edit_profile_form" (submit)="submit()">
+
+        <ion-item class="animate__animated animate__fadeInUp" style="border: solid 1px #07B5CA; border-radius: 5px;">
+          <ion-label position="floating">
+            Nombres
+          </ion-label>
+          <ion-input color="secondary" formControlName="name_first" placeholder="Nombres"></ion-input>
+        </ion-item>
+
+        <ion-item class="animate__animated animate__fadeInUp" style="border: solid 1px #07B5CA; border-radius: 5px;">
+          <ion-label position="floating">
+            Apellidos
+          </ion-label>
+          <ion-input color="secondary" formControlName="name_last" placeholder="Apellidos"></ion-input>
+        </ion-item>
+
+        <ion-item class="animate__animated animate__fadeInUp" style="border: solid 1px #07B5CA; border-radius: 5px;">
+          <ion-label position="floating">
+            Dni
+          </ion-label>
+          <ion-input color="secondary" formControlName="idCard" placeholder="Dni"></ion-input>
+        </ion-item>
+
+      </form>
+
+    </div>
+
+  </ng-container>
+
+</ion-content>

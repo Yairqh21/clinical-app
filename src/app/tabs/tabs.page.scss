@@ -1,0 +1,21 @@
+ion-tab-bar {
+  --background: #07B5CA; /* Fondo del ion-tab-bar */
+}
+
+ion-tab-button {
+  --color: white; /* Color del texto cuando no están seleccionados */
+  --color-selected: #222428; /* Color del texto cuando están seleccionados */
+}
+
+ion-icon {
+  --color: white; /* Color del ícono cuando no está seleccionado */
+}
+
+ion-tab-button.ion-tab-selected ion-icon {
+  --color: #222428; /* Color del ícono cuando está seleccionado */
+}
+
+ion-label {
+  font-size: 12px;
+  font-weight: 500;
+}

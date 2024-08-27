@@ -1,0 +1,49 @@
+<ion-content style="font-family: 'Poppins';">
+  <ion-button routerLink="/signin" fill="clear" shape="round" style="--color: #909090; padding-top: 15px;">
+    <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
+  </ion-button>
+
+  <div class="d-flex-center">
+    <form class="auth-form" [formGroup]="signup_form" (submit)="signUp()">
+      <h2 style="color: black; font-weight: bold; font-size: 29px;">Crear Una Nueva Cuenta</h2>
+      <p class="animate__animated animate__fadeInUp ion-text-start">
+        <ion-text style="color: #909090;">Ingresa tus datos para crear cuenta</ion-text>
+      </p>
+      <br>
+      <p class="animate__animated animate__fadeInUp ion-text-start">
+        <ion-text style="color: #909090;">Nombres</ion-text>
+      </p>
+      <app-custom-input [control]="signup_form.controls.firstName" icon="person-outline" type="text"
+        [placeholder]="'Nombres'"></app-custom-input>
+      <p class="animate__animated animate__fadeInUp ion-text-start">
+        <ion-text style="color: #909090;">Apellidos</ion-text>
+      </p>
+      <app-custom-input [control]="signup_form.controls.lastName" icon="person-outline" type="text"
+        [placeholder]="'Apellidos'"></app-custom-input>
+      <p class="animate__animated animate__fadeInUp ion-text-start">
+        <ion-text style="color: #909090;">DNI</ion-text>
+      </p>
+      <app-custom-input [control]="signup_form.controls.idCard" icon="person-outline" type="number"
+        [placeholder]="'DNI'"></app-custom-input>
+      <p class="animate__animated animate__fadeInUp ion-text-start">
+        <ion-text style="color: #909090;">Correo Electrónico</ion-text>
+      </p>
+      <app-custom-input [control]="signup_form.controls.email" icon="mail-outline" type="email"
+        [placeholder]="'Correo'"></app-custom-input>
+      <p class="animate__animated animate__fadeInUp ion-text-start">
+        <ion-text style="color: #909090;">Contraseña</ion-text>
+      </p>
+      <app-custom-input [control]="signup_form.controls.password" icon="lock-closed-outline" type="password"
+        [placeholder]="'Contraseña'"></app-custom-input>
+      <br>
+      <ion-button class="submit custom-button" expand="block" type="submit">
+        Registrate
+        <ion-icon slot="end" name="log-in-outline"></ion-icon>
+      </ion-button>
+      <ion-button routerLink="/signin" fill="clear" shape="round" style="--color: #ffffff; padding-top: 15px;">
+        <ion-label style="color: #909090;">¿Ya tienes una cuenta? <p style="display: inline; color: #07B5CA;">Inicia
+            Sesión</p></ion-label>
+      </ion-button>
+    </form>
+  </div>
+</ion-content>

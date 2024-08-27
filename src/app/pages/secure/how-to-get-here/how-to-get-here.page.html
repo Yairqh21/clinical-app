@@ -1,0 +1,20 @@
+<ion-header [translucent]="true" style="border-bottom: solid 3px #07B5CA;">
+  <ion-toolbar>
+    <ion-title class="ion-text-center" style="color: #07B5CA; font-weight: bold; font-family: 'Poppins';">
+      Cómo llegar
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+
+  <div #map id="map" class="map-container"></div>
+
+  <zoom-control-component [zoom]="zoom" [userLocation]="userLocation"></zoom-control-component>
+
+  <indicators-component [duration]="mapService.duration" [distance]="mapService.distance" ></indicators-component>
+
+
+</ion-content>

@@ -1,0 +1,171 @@
+<ion-header collapse="fade" [translucent]="true">
+  <ion-toolbar color="dark">
+
+    <ion-title color="light" class="ion-text-center">
+      Mi perfil
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ng-container *ngIf="!content_loaded">
+
+    <ion-card class="ion-padding profile-card">
+      <ion-card-content>
+        <!-- Skeleton Loader for Avatar -->
+        <div class="skeleton skeleton-avatar skeleton-loader">
+          <ion-thumbnail class="skeleton-avatar">
+            <ion-skeleton-text [animated]="true" style="margin-bottom: 10px;"></ion-skeleton-text>
+          </ion-thumbnail>
+        </div>
+
+        <!-- Skeleton Loader for Username -->
+        <div class="skeleton skeleton-text skeleton-loader" style="height: 20px; width: 70%;">
+          <ion-skeleton-text [animated]="true" style="height: 20px; margin-bottom: 10px;"></ion-skeleton-text>
+        </div>
+
+        <!-- Skeleton Loader for User Email -->
+        <div class="skeleton skeleton-text skeleton-loader" style="height: 20px; width: 90%;">
+          <ion-skeleton-text [animated]="true" style="height: 20px; margin-bottom: 10px;"></ion-skeleton-text>
+        </div>
+
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Skeleton Loader for -->
+    <div class="ion-padding form">
+      <ion-list-header class="ion-list-header-small">
+        <ion-label>
+          <ion-skeleton-text [animated]="true" color="tertiary" style="width: 80px"></ion-skeleton-text>
+        </ion-label>
+      </ion-list-header>
+
+      <ion-list >
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <ion-skeleton-text [animated]="true"
+              style="margin-top: 10px; --border-radius: 50%; height: 32px; width: 32px"></ion-skeleton-text>
+          </ion-thumbnail>
+          <ion-label>
+            <ion-skeleton-text [animated]="true" style="width: 30%;"></ion-skeleton-text>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+
+      <hr class="hr-medium">
+
+      <ion-list-header class="ion-list-header-small">
+        <ion-label>
+          <ion-skeleton-text [animated]="true" color="tertiary" style="width: 80px"></ion-skeleton-text>
+        </ion-label>
+      </ion-list-header>
+
+      <ion-list lines="full">
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <ion-skeleton-text [animated]="true"
+              style="margin-top: 10px; --border-radius: 50%; height: 32px; width: 32px"></ion-skeleton-text>
+          </ion-thumbnail>
+          <ion-label>
+            <ion-skeleton-text [animated]="true" style="width: 60%;"></ion-skeleton-text>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <ion-skeleton-text [animated]="true"
+              style="margin-top: 10px; --border-radius: 50%; height: 32px; width: 32px"></ion-skeleton-text>
+          </ion-thumbnail>
+          <ion-label>
+            <ion-skeleton-text [animated]="true" style="width: 60%;"></ion-skeleton-text>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+      <hr class="hr-medium">
+      <ion-list lines="full">
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <ion-skeleton-text [animated]="true"
+              style="margin-top: 10px; --border-radius: 50%; height: 32px; width: 32px"></ion-skeleton-text>
+          </ion-thumbnail>
+          <ion-label>
+            <ion-skeleton-text [animated]="true" style="width: 60%;"></ion-skeleton-text>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="content_loaded">
+    <ion-card class="ion-padding profile-card">
+      <ion-card-content>
+        <ion-avatar>
+          <img [src]="userImage ? userImage : '../../../../assets/img/profile.png'" alt="Profile Picture">
+        </ion-avatar>
+
+        <h1>
+          <ion-text color="light"><strong>{{username}}</strong></ion-text>
+        </h1>
+
+        <p>
+          <ion-text color="medium">{{userEmail}}</ion-text>
+        </p>
+
+      </ion-card-content>
+    </ion-card>
+
+    <div class="ion-padding">
+
+      <ion-list-header class="ion-list-header-small">
+        <ion-label>
+          <ion-text color="tertiary">Personal</ion-text>
+        </ion-label>
+      </ion-list-header>
+
+      <ion-list lines="full">
+        <ion-item button routerLink="edit">
+          <ion-icon slot="start" name="person"></ion-icon>
+          <ion-label>
+            <h3>Editar mi perfil</h3>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+
+      <hr class="hr-medium">
+
+      <ion-list-header class="ion-list-header-small">
+        <ion-label>
+          <ion-text color="tertiary">Seguridad</ion-text>
+        </ion-label>
+      </ion-list-header>
+
+      <ion-list lines="full">
+        <ion-item button>
+          <ion-icon slot="start" name="lock-closed"></ion-icon>
+          <ion-label>
+            <h3>Cambiar contraseña</h3>
+          </ion-label>
+        </ion-item>
+        <ion-item button>
+          <ion-icon slot="start" name="help-circle-sharp"></ion-icon>
+          <ion-label>
+            <h3>Soporte y ayuda</h3>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+
+      <hr class="hr-medium">
+
+      <ion-list class="list-custom" lines="full" (click)="signOut()">
+        <ion-item button detail=false>
+          <ion-icon slot="start" name="log-out"></ion-icon>
+          <ion-label>
+            <h3>Cerrar sesión</h3>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+
+    </div>
+  </ng-container>
+
+</ion-content>

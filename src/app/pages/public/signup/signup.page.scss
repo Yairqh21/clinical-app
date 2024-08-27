@@ -1,0 +1,43 @@
+:host {
+  body {
+    // background-color: var(--ion-color-dark);
+  }
+
+  ion-content {
+    //--background: linear-gradient(135deg, var(--ion-color-dark), var(--ion-color-primary));
+  }
+
+  ion-item {
+    --border-radius: 8px;
+    margin-bottom: 8px;
+  }
+
+  .logo-container {
+    text-align: center;
+
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+    }
+
+    p {
+      margin-bottom: 42px;
+    }
+  }
+}
+
+/* Estilos a los botones */
+
+.custom-button {
+  height: 50px;
+  --border-radius: 15px;
+  --background: #07B5CA; /* Corrige la variable aquí */
+  font-weight: bold;
+  color: white;
+  font-family: 'Poppins';
+  text-transform: none; /* Añadir esto para mantener el texto en su forma original */
+}
+
+ion-button {
+  text-transform: none; /* Añadir esto para todos los ion-button */
+}

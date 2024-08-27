@@ -1,0 +1,41 @@
+<ion-content style="font-family: 'Poppins';">
+  <div class="d-flex-center">
+    <!-- Login form -->
+    <form class="auth-form ion-padding" [formGroup]="signin_form" (submit)="signIn()">
+      <div class="logo-container">
+        <app-logo></app-logo>
+
+      </div>
+
+      <p class="animate__animated animate__fadeInUp ion-text-start">
+        <ion-text style="color: #000000; font-weight: bold; font-size: 35px;">Iniciar Sesión</ion-text>
+      </p>
+      <br>
+      <p class="animate__animated animate__fadeInUp ion-text-start">
+        <ion-text style="color: #909090;; ">Correo Electronico</ion-text>
+      </p>
+      <app-custom-input [control]="signin_form.controls.email" icon="mail-outline" type="email"
+        [placeholder]="'Correo'"></app-custom-input>
+
+      <p class="animate__animated animate__fadeInUp ion-text-start">
+        <ion-text style="color: #909090; ; ">Contrseña</ion-text>
+      </p>
+      <app-custom-input [control]="signin_form.controls.password" icon="lock-closed-outline" type="password"
+        [placeholder]="'Contraseña'"></app-custom-input>
+
+      <p routerLink="forgot-password" class="ion-text-end fpw" style="color: #909090;">¿Olvidaste tu contraseña?</p>
+
+
+      <ion-button class="submit custom-button" expand="block" type="submit">
+        Iniciar Sesión
+        <ion-icon slot="end" name="log-in-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button routerLink="/signup" fill="clear" shape="round" style="--color: #ffffff; padding-top: 15px;">
+        <ion-label style="color: #909090;">¿No tienes una cuenta? <p style="display: inline; color: #07B5CA;">Registrate
+          </p></ion-label>
+      </ion-button>
+    </form>
+
+  </div>
+</ion-content>

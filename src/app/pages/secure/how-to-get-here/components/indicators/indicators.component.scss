@@ -1,0 +1,40 @@
+ion-card {
+  width: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid #06B7C6;
+  padding: 10px;
+  position: relative;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.car-icon {
+  font-size: 24px;
+  color: #06B7C6;
+  margin-right: 10px;
+}
+
+.info {
+  text-align: left;
+}
+
+h1 {
+  font-weight: bold;
+  color: #06B7C6;
+  font-size: 14px;
+  margin: 0;
+}
+
+p {
+  font-size: 12px;
+  margin: 0;
+  color: #333;
+}
